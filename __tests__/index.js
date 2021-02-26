@@ -1,4 +1,4 @@
-/* global describe, jest, expect, it */
+/* global describe, expect, it */
 
 const Transport = require('winston-transport')
 const DatadogTransport = require('../lib')
@@ -46,7 +46,7 @@ describe('DatadogTransport#log(info, callback)', () => {
     }
   ]
     .forEach(testCase => {
-      it(testCase.case, async () => {
+      it(testCase.case, callback => {
         const opts = Object.assign({}, {
           apiKey: 'apikey',
           service: 'service',
@@ -77,8 +77,7 @@ describe('DatadogTransport#log(info, callback)', () => {
         }).reply(204)
 
         const transport = new DatadogTransport(opts)
-        const callback = jest.fn()
-        await transport.log({
+        transport.log({
           dd: {
             trace_id: 'abc',
             span_id: 'def'
@@ -86,7 +85,6 @@ describe('DatadogTransport#log(info, callback)', () => {
           foo: 'bar',
           ddtags: 'tag_a:value_a,tag_b:value_b'
         }, callback)
-        expect(callback).toHaveBeenCalled()
         expect(scope.isDone()).toBe(true)
       })
     })
