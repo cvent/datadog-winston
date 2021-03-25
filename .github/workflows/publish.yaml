@@ -12,11 +12,10 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-        registry: ''
+        registry: 'https://registry.npmjs.org'
     - run: npm install
     - run: npm build
     - run: npm test
-    - run: npm prepublish
     - run: npm publish
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.SOMETHING }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
