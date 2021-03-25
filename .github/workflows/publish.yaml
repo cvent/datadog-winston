@@ -14,6 +14,9 @@ jobs:
         node-version: '12.x'
         registry: ''
     - run: npm install
+    - run: npm build
+    - run: npm test
+    - run: npm prepublish
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.SOMETHING }}
