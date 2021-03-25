@@ -3,7 +3,7 @@
   "version": "1.5.2",
   "description": "Ship winston logs to datadog without breaking a sweat",
   "main": "index.js",
-  "repository": "https://github.com/itsfadnis/datadog-winston.git",
+  "repository": "https://github.com/cvent/datadog-winston.git",
   "author": "itsfadnis <nik.fadnis@gmail.com>",
   "license": "MIT",
   "dependencies": {
