@@ -9,7 +9,7 @@
   "dependencies": {
     "@babel/runtime": "^7.4.5",
     "node-fetch": "^2.6.0",
-    "winston-transport": "^4.3.0"
+    "winston-transport": "^4.8.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
