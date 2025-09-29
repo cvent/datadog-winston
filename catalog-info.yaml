@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1beta1
+kind: Component
+metadata:
+  name: aman
+  title: aman tangri
+  tags: []
+  labels:
+    product: attendee-hub
+  # annotations:
+    # deploy-service-ecs: aman
+    # sonarqube.org/project-key: aman -- please verify if correct, if so remove comment. If not, please fix.
+    # datadoghq.com/service-name: aman
+spec:
+  type: application
+  lifecycle: active
+  owner: group:default/st-regenesis
